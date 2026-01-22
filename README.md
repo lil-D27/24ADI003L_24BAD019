@@ -6,6 +6,9 @@ The dataset for this project is taken from **Kaggle**:
 🔗 **E-commerce Sales Data**  
 https://www.kaggle.com/datasets/carrie1/ecommerce-data
 
+## Code 
+
+
 ## 📈 Output
 
 ### Output 1
@@ -26,10 +29,10 @@ https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
 ## 📈 Output
 
 ### Output 1
-
+![Scenario 2 Output 1](https://github.com/lil-D27/24bad019/blob/176d1fd2b50de3e8ff13cfc545b3132e593d9562/OUTPUT%20SCENARIO2/image.jpg)
 
 ### Output 2
-
+![Scenario 2 Output 1](https://github.com/lil-D27/24bad019/blob/176d1fd2b50de3e8ff13cfc545b3132e593d9562/OUTPUT%20SCENARIO2/image%20(2).png)
 
 
 # Scenario 3
@@ -43,9 +46,10 @@ https://www.kaggle.com/datasets/harishkumardatalab/housing-price-prediction
 ## 📈 Output
 
 ### Output 1
-
-
+![Scenario 3 Output 1](https://github.com/lil-D27/24bad019/blob/176d1fd2b50de3e8ff13cfc545b3132e593d9562/OUTPUT%20%20SCENARIO3/image%20(1).jpg)
+ 
 ### Output 2
+![Scenario 3 Output 1](https://github.com/lil-D27/24bad019/blob/176d1fd2b50de3e8ff13cfc545b3132e593d9562/OUTPUT%20%20SCENARIO3/image%20(3).png)
 
 
 
@@ -60,7 +64,7 @@ https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis
 ## 📈 Output
 
 ### Output 1
-
+![Scenario 4 Output 1](https://github.com/lil-D27/24bad019/blob/de8d5250c5fa63c31fe7411ed617e85bc2e42e2a/OUTPUT%20%20SCENARIO4/WhatsApp%20Image%202026-01-22%20at%203.38.24%20PM.jpeg)
 
 
 
