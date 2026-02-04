@@ -10,6 +10,8 @@ https://github.com/lil-D27/24ADI003L_24BAD019/blob/4448e939f5ae9f59cc4fd37b9d061
 
 ## 📈 Output
 
+![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b578147c9361e1faf58e7e432bfcc8aaa71a8b9/EXERCISE%202/FIGURES/OUTPUT%20SCENARIO%201/ex2-opsc1.png)
+
 ### Output 1  
 ![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/d1730b9138415678698bd2fcceb08d845ddecb4d/EXERCISE%202/FIGURES/OUTPUT%20SCENARIO%201/s1.png)
 
