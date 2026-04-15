@@ -34,10 +34,3 @@ https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e3
 ![Scenario 1 Output 1](
 https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/FIGURES/OUTPUT%20SCENARIO%202/e7_s2_op1.png)
 
-
-### Output 3
-![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%202/EXP9_SC2_OP3.png)
-
-### Output 4  
-![Scenario 1 Output 1](
-https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%202/EXP9_SC2_OP4.png)
