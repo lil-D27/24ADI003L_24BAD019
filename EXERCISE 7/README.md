@@ -3,7 +3,7 @@
 The dataset for this project is taken from **Kaggle**:
 
 🔗 **Mall Customer Segmentation Dataset**  
-![LINK](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python)
+https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python
 
 
 # SCENARIO 1
