@@ -2,13 +2,13 @@
 ## 📊 Dataset Used
 The dataset for this project is taken from **Kaggle**:
 
-🔗 **USER-BASED COLLABORATIVE FILTERING**  
+🔗 **MATRIX FACTORIZATION USING SVD**  
 # SCENARIO 1 , 2
 ## 📊 Dataset Used
 The dataset for this project is taken from **Kaggle**:
 
 🔗 **MovieLens Dataset**  
-https://www.kaggle.com/datasets/grouplens/movielens-100k
+https://www.kaggle.com/datasets/abhikjha/movielens-100k
 
 
 🔗 **USER-BASED COLLABORATIVE FILTERING**  
