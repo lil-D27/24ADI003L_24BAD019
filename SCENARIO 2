@@ -1,0 +1,40 @@
+print("24BAD019 Dhanya G")
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.mixture import GaussianMixture
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import silhouette_score
+
+data = pd.read_csv(r"C:\Users\sandh\Downloads\archive (10)\Mall_Customers.csv")
+
+print(data.head())
+
+X = data[['Annual Income (k$)', 'Spending Score (1-100)']]
+
+print(X.isnull().sum())
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+gmm = GaussianMixture(n_components=5, random_state=42)
+gmm.fit(X_scaled)
+
+labels = gmm.predict(X_scaled)
+probs = gmm.predict_proba(X_scaled)
+
+data['Cluster'] = labels
+
+print("Silhouette Score:", silhouette_score(X_scaled, labels))
+print("AIC:", gmm.aic(X_scaled))
+print("BIC:", gmm.bic(X_scaled))
+
+plt.figure()
+plt.scatter(X_scaled[:, 0], X_scaled[:, 1], c=labels)
+plt.title("GMM Clustering")
+plt.xlabel("Annual Income (scaled)")
+plt.ylabel("Spending Score (scaled)")
+plt.show()
+
+print(data.groupby('Cluster')[['Annual Income (k$)', 'Spending Score (1-100)']].mean())
+
