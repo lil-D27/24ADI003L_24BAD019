@@ -2,12 +2,12 @@
 ## 📊 Dataset Used
 The dataset for this project is taken from **Kaggle**:
 
-🔗 **MovieLens Dataset**  
-https://www.kaggle.com/datasets/abhikjha/movielens-100k
+🔗 **Mall Customer Segmentation Dataset**  
+![LINK](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python)
 
 
 # SCENARIO 1
-🔗 **MATRIX FACTORIZATION USING SVD**  
+🔗 **CLUSTERING USING K-MEANS**  
 ## Code 
 https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/SCENARIO%201
 
@@ -23,7 +23,7 @@ https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e3
 
 
 # SCENARIO 2
-🔗 **MATRIX FACTORIZATION USING NMF**  
+🔗 **CLUSTERING USING GMM**  
 ## Code
 https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/SCENARIO%202
 
