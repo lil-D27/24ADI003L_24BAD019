@@ -1,8 +1,3 @@
-# SCENARIO 1
-## 📊 Dataset Used
-The dataset for this project is taken from **Kaggle**:
-
-🔗 **USER-BASED COLLABORATIVE FILTERING**  
 # SCENARIO 1 , 2
 ## 📊 Dataset Used
 The dataset for this project is taken from **Kaggle**:
@@ -11,8 +6,8 @@ The dataset for this project is taken from **Kaggle**:
 https://www.kaggle.com/datasets/grouplens/movielens-100k
 
 
-🔗 **USER-BASED COLLABORATIVE FILTERING**  
 # SCENARIO 1
+🔗 **USER-BASED COLLABORATIVE FILTERING**  
 ## Code 
 https://github.com/lil-D27/24ADI003L_24BAD019/blob/709699c1f5a7a3dc31f60d33cc7cbc578889eb41/EXERCISE%209/SCENARIO%201
 
@@ -29,8 +24,8 @@ https://github.com/lil-D27/24ADI003L_24BAD019/blob/709699c1f5a7a3dc31f60d33cc7cb
 ![Scenario 1 Output 2](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%201/EXP9_SC1_OP3.png)
 
 
-🔗 **ITEM-BASED COLLABORATIVE FILTERING**  
 # SCENARIO 2
+🔗 **ITEM-BASED COLLABORATIVE FILTERING**  
 ## Code
 https://github.com/lil-D27/24ADI003L_24BAD019/blob/709699c1f5a7a3dc31f60d33cc7cbc578889eb41/EXERCISE%209/SCENARIO%202
 

@@ -1,52 +1,36 @@
-# SCENARIO 1
-## 📊 Dataset Used
-The dataset for this project is taken from **Kaggle**:
-
-🔗 **USER-BASED COLLABORATIVE FILTERING**  
 # SCENARIO 1 , 2
 ## 📊 Dataset Used
 The dataset for this project is taken from **Kaggle**:
 
 🔗 **MovieLens Dataset**  
-https://www.kaggle.com/datasets/grouplens/movielens-100k
+https://www.kaggle.com/datasets/abhikjha/movielens-100k
 
 
-🔗 **USER-BASED COLLABORATIVE FILTERING**  
 # SCENARIO 1
+🔗 **MATRIX FACTORIZATION USING SVD**  
 ## Code 
-https://github.com/lil-D27/24ADI003L_24BAD019/blob/709699c1f5a7a3dc31f60d33cc7cbc578889eb41/EXERCISE%209/SCENARIO%201
+https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/SCENARIO%201
 
 ## 📈 Output
-![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%201/EXP9_SC1_OP.png)
+![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/FIGURES/OUTPUT%20SCENARIO%201/e7_s1_op.png)
 
 ### Output 1  
-![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%201/EXP9_SC1_OP1.png)
+![Scenario 1 Output 1](
+https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/FIGURES/OUTPUT%20SCENARIO%201/e7_s1_op1.png)
 
 ### Output 2
-![Scenario 1 Output 2](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%201/EXP9_SC1_OP2.png)
-
-### Output 3
-![Scenario 1 Output 2](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%201/EXP9_SC1_OP3.png)
+![Scenario 1 Output 2](https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/FIGURES/OUTPUT%20SCENARIO%201/e7_s1_op2.png)
 
 
-🔗 **ITEM-BASED COLLABORATIVE FILTERING**  
 # SCENARIO 2
+🔗 **MATRIX FACTORIZATION USING NMF**  
 ## Code
-https://github.com/lil-D27/24ADI003L_24BAD019/blob/709699c1f5a7a3dc31f60d33cc7cbc578889eb41/EXERCISE%209/SCENARIO%202
+https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/SCENARIO%202
 
 ## 📈 Output
-![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%202/EXP9_SC2_OP.png)
+![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/FIGURES/OUTPUT%20SCENARIO%202/e7_s2_op.png)
 
 ### Output 1  
 ![Scenario 1 Output 1](
-https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%202/EXP9_SC2_OP1.png)
+https://github.com/lil-D27/24ADI003L_24BAD019/blob/5b126e8c539c438721e7c4f0170e35a0059b36ac/EXERCISE%207/FIGURES/OUTPUT%20SCENARIO%202/e7_s2_op1.png)
 
-### Output 2 
-![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%202/EXP9_SC2_OP2.png)
-
-### Output 3
-![Scenario 1 Output 1](https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%202/EXP9_SC2_OP3.png)
-
-### Output 4  
-![Scenario 1 Output 1](
-https://github.com/lil-D27/24ADI003L_24BAD019/blob/e5ea227f4f781b080e53c4da2ee217b999b5af3f/EXERCISE%209/FIGURES/OUTPUT%20SCENARIO%202/EXP9_SC2_OP4.png)

@@ -1,0 +1,110 @@
+print("24BAD019 Dhanya G")
+import numpy as np
+import pandas as pd
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+ratings = pd.read_csv(r"C:\Users\sandh\Downloads\archive (11)\ml-latest-small\ratings.csv")   
+
+print("Dataset Shape:", ratings.shape)
+print("\nSample Data:\n", ratings.head())
+
+ratings = ratings[['userId', 'movieId', 'rating']]
+
+print("\nUnique Users:", ratings['userId'].nunique())
+print("Unique Movies:", ratings['movieId'].nunique())
+
+user_item_matrix = ratings.pivot(index='userId', columns='movieId', values='rating')
+
+print("\nUser-Item Matrix Shape:", user_item_matrix.shape)
+
+matrix_filled = user_item_matrix.fillna(0)
+
+user_mean = np.mean(matrix_filled, axis=1)
+matrix_norm = matrix_filled.sub(user_mean, axis=0)
+
+print("\nMean rating of first 5 users:\n", user_mean.head())
+
+U, sigma, Vt = np.linalg.svd(matrix_norm, full_matrices=False)
+
+print("\nShapes after SVD:")
+print("U:", U.shape)
+print("Sigma:", sigma.shape)
+print("Vt:", Vt.shape)
+
+k_values = [10, 20, 50]
+results = []
+
+for k in k_values:
+    print(f"\n Using k = {k} latent factors ")
+    
+    sigma_k = np.diag(sigma[:k])
+    U_k = U[:, :k]
+    Vt_k = Vt[:k, :]
+
+    reconstructed = np.dot(np.dot(U_k, sigma_k), Vt_k)
+ 
+    reconstructed = reconstructed + user_mean.values.reshape(-1, 1)
+    
+
+    pred_df = pd.DataFrame(reconstructed, 
+                           index=user_item_matrix.index, 
+                           columns=user_item_matrix.columns)
+
+    actual = user_item_matrix.values[user_item_matrix.notna()]
+    predicted = pred_df.values[user_item_matrix.notna()]
+    
+    rmse = np.sqrt(mean_squared_error(actual, predicted))
+    mae = mean_absolute_error(actual, predicted)
+    
+    print("RMSE:", rmse)
+    print("MAE:", mae)
+    
+    results.append((k, rmse, mae))
+
+def recommend_movies(user_id, n=5):
+    user_row = pred_df.loc[user_id]
+    already_rated = user_item_matrix.loc[user_id].dropna().index
+    
+    recommendations = user_row.drop(already_rated).sort_values(ascending=False).head(n)
+    
+    return recommendations
+
+print("\nTop Recommendations for User 1:\n", recommend_movies(1, 5))
+
+k_list, rmse_list, mae_list = zip(*results)
+
+print("\n Performance Table ")
+for i in range(len(k_list)):
+    print(f"k = {k_list[i]}  |  RMSE = {rmse_list[i]:.4f}  |  MAE = {mae_list[i]:.4f}")
+
+print("\n Predicted vs Actual Ratings (Sample)")
+
+rows, cols = np.where(~np.isnan(user_item_matrix.values))
+
+for i in range(10): 
+    r = rows[i]
+    c = cols[i]
+    actual_val = user_item_matrix.values[r, c]
+    predicted_val = pred_df.values[r, c]
+    print(f"User {user_item_matrix.index[r]}, Movie {user_item_matrix.columns[c]} -> Actual: {actual_val}, Predicted: {predicted_val:.2f}")
+print("\nOriginal Matrix Size:", matrix_norm.shape)
+print("Reduced Matrix Size (k=50):", U_k.shape, sigma_k.shape, Vt_k.shape)
+
+plt.figure()
+plt.plot(k_list, rmse_list, marker='o')
+plt.title("RMSE vs Latent Factors (k)")
+plt.xlabel("k")
+plt.ylabel("RMSE")
+plt.show()
+
+plt.figure()
+sns.heatmap(matrix_filled.iloc[:20, :20])
+plt.title("Original Matrix (Sample)")
+plt.show()
+
+plt.figure()
+sns.heatmap(pred_df.iloc[:20, :20])
+plt.title("Reconstructed Matrix (Sample)")
+plt.show()
