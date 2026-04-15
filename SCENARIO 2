@@ -1,0 +1,131 @@
+print("24BAD019 Dhanya G")
+import numpy as np
+import pandas as pd
+from sklearn.decomposition import NMF
+from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
+
+ratings = pd.read_csv(r"C:\Users\sandh\Downloads\archive (11)\ml-latest-small\ratings.csv")
+
+print("Dataset Shape:", ratings.shape)
+print("\nSample Data:\n", ratings.head())
+
+ratings = ratings[['userId', 'movieId', 'rating']]
+user_item_matrix = ratings.pivot(index='userId', columns='movieId', values='rating')
+
+print("\nUnique Users:", ratings['userId'].nunique())
+print("Unique Movies:", ratings['movieId'].nunique())
+print("\nUser-Item Matrix Shape:", user_item_matrix.shape)
+
+matrix_filled = user_item_matrix.apply(lambda row: row.fillna(row.mean()), axis=1)
+matrix_filled = matrix_filled.fillna(0)
+
+sparsity = 1.0 - np.count_nonzero(matrix_filled.values) / matrix_filled.size
+print("\nMatrix Sparsity:", round(sparsity, 4))
+
+k_values = [10, 20, 50]
+results = []
+
+for k in k_values:
+    print(f"\nUsing k = {k} latent factors")
+    nmf_model = NMF(
+        n_components=k,
+        init='nndsvda',
+        random_state=42,
+        max_iter=500
+    )
+
+    W = nmf_model.fit_transform(matrix_filled)
+    H = nmf_model.components_
+
+    print("User-feature matrix (W) shape:", W.shape)
+    print("Item-feature matrix (H) shape:", H.shape)
+
+    reconstructed = np.dot(W, H)
+
+    pred_df = pd.DataFrame(
+        reconstructed,
+        index=user_item_matrix.index,
+        columns=user_item_matrix.columns
+    )
+    actual = user_item_matrix.values[user_item_matrix.notna()]
+    predicted = pred_df.values[user_item_matrix.notna()]
+
+    rmse = np.sqrt(mean_squared_error(actual, predicted))
+    print("RMSE:", rmse)
+
+    def precision_recall_at_k(user_id, k_recs=5, threshold=3.5):
+        user_actual = user_item_matrix.loc[user_id]
+        user_pred = pred_df.loc[user_id]
+
+        relevant = user_actual[user_actual >= threshold].index
+        recommended = user_pred.sort_values(ascending=False).head(k_recs).index
+
+        true_positive = len(set(recommended) & set(relevant))
+
+        precision = true_positive / k_recs
+        recall = true_positive / len(relevant) if len(relevant) > 0 else 0
+
+        return precision, recall
+
+    precisions = []
+    recalls = []
+
+    for user in user_item_matrix.index[:50]:
+        p, r = precision_recall_at_k(user)
+        precisions.append(p)
+        recalls.append(r)
+
+    avg_precision = np.mean(precisions)
+    avg_recall = np.mean(recalls)
+
+    print("Precision@5:", round(avg_precision, 4))
+    print("Recall@5:", round(avg_recall, 4))
+
+    results.append((k, rmse, avg_precision, avg_recall, pred_df))
+
+def recommend_movies(user_id, pred_df, n=5):
+    user_row = pred_df.loc[user_id]
+    already_rated = user_item_matrix.loc[user_id].dropna().index
+
+    recs = user_row.drop(already_rated).sort_values(ascending=False).head(n)
+    return recs
+
+best_model = results[-1][4]
+
+print("\nTop Recommendations for User 1")
+print(recommend_movies(1, best_model, 5))
+
+print("\nPerformance Table")
+for k, rmse, p, r, _ in results:
+    print(f"k = {k} | RMSE = {rmse:.4f} | Precision@5 = {p:.4f} | Recall@5 = {r:.4f}")
+
+print("\nPredicted vs Actual Ratings (Sample)")
+
+rows, cols = np.where(~np.isnan(user_item_matrix.values))
+for i in range(10):
+    r = rows[i]
+    c = cols[i]
+    actual_val = user_item_matrix.values[r, c]
+    predicted_val = best_model.values[r, c]
+    print(f"User {user_item_matrix.index[r]}, Movie {user_item_matrix.columns[c]} -> Actual: {actual_val}, Predicted: {predicted_val:.2f}")
+print("\nOriginal Matrix Size:", matrix_filled.shape)
+print("Reduced Size (k=50):", best_model.shape, "via W and H")
+
+k_list = [x[0] for x in results]
+rmse_list = [x[1] for x in results]
+
+plt.figure()
+plt.plot(k_list, rmse_list, marker='o')
+plt.title("RMSE vs Latent Factors (NMF)")
+plt.xlabel("k")
+plt.ylabel("RMSE")
+plt.show()
+recs = recommend_movies(1, best_model, 5)
+plt.figure()
+plt.bar(range(len(recs)), recs.values)
+plt.xticks(range(len(recs)), recs.index)
+plt.title("Top Recommendations for User 1")
+plt.xlabel("Movie ID")
+plt.ylabel("Predicted Rating")
+plt.show()
